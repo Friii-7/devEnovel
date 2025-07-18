@@ -19,6 +19,110 @@ body {
     overflow-x: hidden;
 }
 
+/* Modern ChatGPT-style Button for "Al enovel" */
+.btn-chatgpt {
+    background: linear-gradient(135deg, #FA4517 0%, #e03d15 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    min-width: 140px;
+    max-width: 200px;
+    width: auto;
+    letter-spacing: 0.5px;
+}
+
+.btn-chatgpt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-chatgpt:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(250, 69, 23, 0.5);
+    background: linear-gradient(135deg, #e03d15 0%, #d03512 100%);
+    animation: none;
+}
+
+.btn-chatgpt:hover::before {
+    left: 100%;
+}
+
+.btn-chatgpt:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn-chatgpt:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(250, 69, 23, 0.3), 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Pulse animation for the button */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* Border shadow animation */
+@keyframes border-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(250, 69, 23, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(250, 69, 23, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(250, 69, 23, 0);
+    }
+}
+
+.btn-chatgpt {
+    animation: pulse-glow 3s ease-in-out infinite, border-glow 2s ease-in-out infinite;
+}
+
+/* Mobile responsive adjustments for the ChatGPT button */
+@media screen and (max-width: 768px) {
+    .btn-chatgpt {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btn-chatgpt {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        min-width: 100px;
+    }
+}
+
 /* Ensure all containers respect max-width */
 .container,
 .nav-container,
@@ -171,6 +275,22 @@ button,
     width: auto;
 }
 
+.btn-ch {
+    padding: 0.50rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 120px;
+    max-width: 200px;
+    width: auto;
+}
+
 .btn-primary {
     background: #FA4517;
     color: #ffffff;
@@ -269,7 +389,7 @@ button,
 /* Hero Section Styles */
 .hero-section {
     background: #ffffff;
-    padding: 8rem 2rem;
+    padding: 3rem 1rem;
     margin-top: 70px;
     min-height: calc(100vh - 70px);
     display: flex;
@@ -399,7 +519,7 @@ button,
     max-width: 1200px;
     margin: 0 auto;
     background: #ffffff;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
@@ -1026,7 +1146,7 @@ button,
 }
 
 .clients-btn {
-    padding: 1rem 2.5rem;
+    padding: 0.50rem 4rem;
     font-size: 1.1rem;
     background: #FA4517;
     color: #ffffff;
@@ -1099,7 +1219,7 @@ button,
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 10rem 2rem;
+    padding: 4rem 2rem;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -1196,17 +1316,21 @@ button,
 
 .contact-btn {
     margin-top: 1rem;
-    padding: 1rem 2rem;
+    padding: 0.50rem 13rem;
     font-size: 1.1rem;
     font-weight: 600;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 4px;
     background: #FA4517;
     color: #ffffff;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(250, 69, 23, 0.3);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-btn:hover {
