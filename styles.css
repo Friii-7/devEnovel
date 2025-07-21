@@ -1370,8 +1370,8 @@ button,
     }
     
     .contact-btn {
-        padding: 15rem 9rem;
-        font-size: 1.05rem;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
         width: 100%;
         margin: 0 auto;
         display: block;
@@ -1411,18 +1411,24 @@ button,
 /* iPad specific styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .contact-btn {
-        padding: 1rem 5rem;
+        padding: 1rem 3rem;
         font-size: 1.1rem;
         width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
     }
 }
 
 /* iPad landscape */
 @media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
     .contact-btn {
-        padding: 0.875rem 6rem;
+        padding: 1rem 4rem;
         font-size: 1.1rem;
         width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
     }
 }
 
